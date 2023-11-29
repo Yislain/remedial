@@ -1,0 +1,204 @@
+<%- include ("../templates/encabezado") %>
+<%- include ("../templates/menu") %>
+
+<style>
+  body {
+    background-color: white;
+    color: #333333;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+
+  .headline {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .post {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #007bff;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .category {
+    font-size: 12px;
+    color: #007bff;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .title:hover {
+    color: #007bff;
+  }
+
+  .intro {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .author {
+    font-style: italic;
+    font-size: 12px;
+    color: #555555;
+  }
+
+  footer {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #555555;
+  }
+</style>
+
+<div class="container">
+
+  <h1 class="headline">NOTICIAS DESTACADAS</h1>
+
+  <div class="posts">
+
+    <article class="post">
+      <img src="https://www.syntonize.com/wp-content/uploads/2022/04/B1EAC077-CB2F-48F8-B9E2-C9764AB65E64.jpeg" alt="Imagen de Tecnología" class="thumbnail">
+
+      <div class="content">
+        <span class="category">Tecnología</span>
+
+        <a href="#" class="title">
+          Netflix y su nueva función polémica.
+        </a>
+
+        <p class="intro">
+          Se acabó el compartir cuentas. Netflix limitará la suscripción a perfiles que conviven en el mismo hogar. Implementará verificación por códigos para evitar uso externo y ofrecerá opciones de pago adicionales.
+        </p>
+
+      </div>
+    </article>
+
+    <!-- Other articles go here -->
+
+    <article class="post">
+      <img src="https://cnnespanol.cnn.com/wp-content/uploads/2023/11/231128163310-carlo-ancelotti-real-madrid-previa-full-169.jpg?quality=100&strip=info&w=780&h=438&crop=1" alt="Imagen de Deportes" class="thumbnail">
+
+      <div class="content">
+        <span class="category">Deportes</span>
+
+        <a href="#" class="title">
+          Jornada 5 de la Champions League 2023/2024: partidos, horarios y grupos        </a>
+
+        <p class="intro">
+          FÚTBOL
+          Ancelotti confía en la calidad de su plantilla ante las varias lesiones que afectan al Real Madrid
+        </p>
+
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="https://cnnespanol.cnn.com/wp-content/uploads/2023/02/230203182705-frio-extremo-temperatura-gelido-chamarra-redaccion-mexico-00001005-full-169.jpg?quality=100&strip=info&w=940&h=530&crop=1" alt="Imagen de Deportes" class="thumbnail">
+
+      <div class="content">
+        <span class="category">México</span>
+
+        <a href="#" class="title">
+          Frente frío 12 en México: lugares amenazados por tormentas de nieve y dónde hará más frío        <p class="intro">
+        </p>
+        <p class="intro">
+
+          El Servicio Meteorológico Nacional de México (SMN) informó este martes que el frente frío número 12 de la temporada 2023-2024 continúa enfriando el territorio y ocasionará lluvias y tormentas de nieve en algunos estados del país.        </p>
+
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="https://cnnespanol.cnn.com/wp-content/uploads/2023/03/230327172156-turismo-tianguis-viajes-perspectivas-mexico-miguel-torruco-destino-turistico-00005001-full-169.jpg?quality=100&strip=info&w=300&h=170&crop=1" alt="Imagen de Deportes" class="thumbnail">
+
+      <div class="content">
+        <span class="category">México</span>
+
+        <a href="#" class="title">
+          ¿Cómo se encuentra México en el sector turístico? Miguel Torruco habla con CNN sobre el tema        </p>
+        <p class="intro">
+
+          México celebra su Tianguis Turístico en su edición 47. La capital mexicana es la sede del encuentro que busca impulsar la oferta turística que tiene el país latinoamericano. CNN entrevistó a Miguel Torruco, secretario de Turismo federal, para conocer cómo se encuentra México en este tema.
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="https://www.eluniversal.com.mx/resizer/w-8WQa1-sX3Vhu-h-FiVYrBG-ro=/1100x666/cloudfront-us-east-1.images.arcpublishing.com/eluniversal/IEKMWDVXIZGOBAQ4YPQ5CU6W7Q.jpg" alt="Imagen de Deportes" class="thumbnail">
+
+      <div class="content">
+        <span class="category">Deportes</span>
+
+        <a href="#" class="title">
+          Hamas invita a Elon Musk que visite Gaza para ver el "alcance de las masacres" israelíes       </p>
+        <p class="intro">
+
+          El lunes el multimillonario visitó el kibutz Kfar Azza, una de las comunidades ubicadas a pocos kilómetros de la Franja que fueron atacadas por Hamas       
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="https://imagenes.elpais.com/resizer/1UQD52oFVlsL1l3fKFd_rlpSIdY=/1200x0/filters:focal(2437x770:2447x780)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/575GLCPD6BF43FXQ6HUEHWGQJM.jpg" alt="Imagen de Deportes" class="thumbnail">
+      
+      <div class="content">
+        <span class="category">México</span>
+
+        <a href="#" class="title">
+          
+          El PSG, salvado por un penalti extremo de VAR       </p>
+        <p class="intro">
+
+          El tanto de Mbappé, en el 98, evita una derrota que habría dejado al equipo de Luis Enrique virtualmente eliminado. La última jornada resolverá el Grupo F      </div>
+    </article>
+
+  
+
+
+  </div>
+
+  <footer>
+    &copy; 2023 04nfaPassword
+  </footer>
+
+</div>
+
+

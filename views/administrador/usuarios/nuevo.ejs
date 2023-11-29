@@ -1,0 +1,39 @@
+<%- include("../../templates/encabezado")%>
+<%- include("../../templates/menuadmin")%>
+<div class="container mt-5">
+    <form action="/nuevousuarioadmin" method="post" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <h1>Nuevo Usuario</h1>
+            </div>
+            <div class="card-body">
+                <input class="form-control mb-3" type="text" name="nombre" id="nombre" placeholder="Nombre" autofocus required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa tu nombre.
+                </div>
+                <input class="form-control mb-3" type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa un nombre de usuario.
+                </div>
+                <input class="form-control mb-3" type="text" name="correo" id="correo" placeholder="Correo" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa tu correo electrónico.
+                </div>
+                <input class="form-control mb-3" type="password" name="password" id="password" placeholder="Password" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa una contraseña.
+                </div>
+                <input class="form-control mb-3" type="file" name="foto" id="foto" placeholder="Selecciona tu foto" required>
+                <div class="invalid-feedback">
+                    Por favor, selecciona una foto para el perfil.
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="submit">Guardar Usuario</button>
+                <button class="btn btn-secondary" type="reset">Limpiar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include("../../templates/pie")%>

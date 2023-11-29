@@ -1,0 +1,43 @@
+<%- include("../../templates/encabezado")%>
+<%- include("../../templates/menuadmin")%>
+<div class="container mt-5">
+<div class="card">
+    <div class="card-header">
+        <h1>Noticias</h1>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Ubicacion</th>
+                    <th>Descripción</th>
+                    <th>Editar/Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                negocios.forEach((negocio,i)=>{
+                %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><%=negocio.nombre%></td>
+                        <td><%=negocio.ubi%></td>
+                        <td><%=negocio.desc%></td>
+                        <td><img src="/Negocios/images/<%= negocio.foto %>" width="100px"></td>
+                        <td>
+                            <a href="/editarnegocio/<%=negocio.id%>">Editar</a>
+                            <a href="/borrarnegocioadmin/<%=negocio.id%>">Borrar</a>
+                        </td>
+                    </tr>
+                <%
+                });
+                %>
+            </tbody>
+        </table>
+    </div>   
+    <div class="card-footer"></div>
+</div>
+</div>
+<%- include("../../templates/pie")%>

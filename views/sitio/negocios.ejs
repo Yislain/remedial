@@ -1,0 +1,56 @@
+<%- include("../templates/encabezado") %>
+<%- include("../templates/menu") %>
+<style>
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/Negocios/images/<%= negocios.foto %>'); /* Ruta de la imagen de fondo */
+        background-size: cover;
+        background-position: center;
+        filter: blur(10px); /* Desenfoque para la imagen de fondo */
+        z-index: -1; /* Asegura que esté detrás del contenido */
+    }
+</style>
+
+<div class="container mt-3">
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <!-- Contenedor del título con sombra -->
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card mt-3 shadow">
+                    <div class="text-center p-4">
+                        <h1 class="card-title mt-3"><%= negocios.nombre %></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor de la imagen con sombra -->
+        <div class="row mt-3">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card shadow">
+                    <img src="/Negocios/images/<%= negocios.foto %>" alt="Negocio Image" class="img-fluid" style="border-radius: 8px; max-height: 450px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor de la información con sombra -->
+        <div class="row mt-3">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card shadow">
+                    <input class="form-control mb-3" type="hidden" name="id" id="id" value="<%= negocios.id %>">
+                    <div class="card-body">
+                        <p class="card-text fs-5"><strong>Ubicacion:</strong> <%= negocios.ubi %></p>
+                        <p class="card-text fs-5"><strong>Descripcion:</strong> <%= negocios.desc %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include("../templates/pie") %>

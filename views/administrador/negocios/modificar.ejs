@@ -1,0 +1,29 @@
+<%- include("../../templates/encabezado") %>
+<%- include("../../templates/menuadmin") %>
+<div class="container" mt-5>
+    <form action="/editarnegocioadmin" method="post" enctype="multipart/form-data">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h1>Modificar Negocio </h1>
+            </div>
+            <div class="card-body">
+                <input type="hidden" name="id" id="id" value="<%= negocio.id %>">
+                <input type="hidden" name="fotoAnterior" id="fotoAnterior" value="<%= negocio.foto %>">
+                <input type="hidden" name="userid" id="userid" value="<%= negocio.userid %>">
+                <input class="form-control mb-3" type="text" value="<%= negocio.nombre %>" name="nombre" id="nombre" placeholder="Nombre" autofocus>
+                <input class="form-control mb-3" type="text" value="<%= negocio.desc %>" name="desc" id="desc" placeholder="Descripción">
+                <input class="form-control mb-3" type="text" value="<%= negocio.ubi %>" name="ubi" id="ubi" placeholder="Ubicacion">
+                <div class="form-control mb-3">
+                    <img src="/Negocios/images/<%= negocio.foto %>" alt="" width="100px">
+                    <div><%=negocio.foto%></div>
+                </div>
+                <input class="form-control mb-3"type="file" name="foto" id="foto">
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary mb-3" type="submit">Editar Negocio</button>
+                <button class="btn btn-secundary mb-3" type="reset">Limpiar campos</button>
+            </div>
+        </div>
+    </form>
+</div>
+<%- include("../../templates/pie") %>

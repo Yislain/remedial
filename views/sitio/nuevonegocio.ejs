@@ -1,0 +1,55 @@
+<%- include("../templates/encabezado")%>
+<%- include("../templates/menu")%>
+
+<style>
+    body {
+    background-image: url('https://media.giphy.com/media/1pmatQ3LcP5XFYxSWF/giphy-downsized-large.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Ajusta otros estilos según sea necesario */
+}
+</style>
+<div class="container mt-5">
+    <form action="/nuevosnegocios/<%=user.id%>" method="post" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h1 class="text-center">Nueva Noticia</h1>
+            </div>
+            <div class="card-body">
+                <input type="hidden" name="idUsuario" value="<%= user.id%>">
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Titulo de la noticia</label>
+                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ej. Captura de..." autofocus required>
+                    <div class="invalid-feedback">Por favor, ingresa el titulo de la noticia.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="ubi" class="form-label">Ubicación</label>
+                    <input class="form-control" type="text" name="ubi" id="ubi" placeholder="Ej. Calle, Ciudad, Estado, etc." required>
+                    <div class="invalid-feedback">Por favor, ingresa la ubicación de la noticia.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Descripción</label>
+                    <textarea class="form-control" name="desc" id="desc" placeholder="Descripción de la noticia" rows="3" required></textarea>
+                    <div class="invalid-feedback">Por favor, ingresa la descripción de la noticia.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto de la noticia</label>
+                    <input class="form-control" type="file" name="foto" id="foto" required>
+                    <div class="invalid-feedback">Por favor, selecciona una foto para la noticia.</div>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-end">
+                <button class="btn btn-primary me-2" type="submit">Guardar Noticia</button>
+                <button class="btn btn-secondary" type="reset">Limpiar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<%- include("../templates/pie")%>

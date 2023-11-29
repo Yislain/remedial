@@ -1,0 +1,24 @@
+<%- include("../../templates/encabezado")%>
+<%- include("../../templates/menuadmin")%>
+<div class="container mt-5">
+    <form action="/nuevonegocio" method="post" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <h1>Nueva noticia</h1>
+            </div>
+            <div class="card-body">
+                <input class="form-control mb-3" type="text" name="nombre" id="nombre" placeholder="Nombre" autofocus required>
+                <input class="form-control mb-3" type="text" name="ubi" id="ubi" placeholder="Ubicacion" required>
+                <input class="form-control mb-3" type="text" name="desc" id="desc" placeholder="Descripción" required>
+                <input class="form-control mb-3" type="text" name="userid" id="userid" placeholder="ID Usuario" required>
+                <input class="form-control mb-3" type="file" name="foto" id="foto" placeholder="Selecciona tu foto" required>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="submit">Guardar Noticia</button>
+                <button class="btn btn-secondary" type="reset">Limpiar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include("../../templates/pie")%>

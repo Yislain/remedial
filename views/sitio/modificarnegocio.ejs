@@ -1,0 +1,79 @@
+<%- include("../templates/encabezado") %>
+<%- include("../templates/menu") %>
+
+<style>
+    body {
+        background-image: url('/Negocios/images/<%= negocio.foto %>');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<div class="container mt-5">
+    <form action="/editarnegocio" method="post" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header">
+                <h1>Modificar Negocio</h1>
+            </div>
+            <div class="card-body">
+                <input type="hidden" name="id" id="id" value="<%= negocio.id %>">
+                <input type="hidden" name="fotoAnterior" id="fotoAnterior" value="<%= negocio.foto %>">
+                <input type="hidden" name="userid" id="userid" value="<%= negocio.userid %>">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input class="form-control" type="text" value="<%= negocio.nombre %>" name="nombre" id="nombre" placeholder="Nombre" autofocus>
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Descripción:</label>
+                    <input class="form-control" type="text" value="<%= negocio.desc %>" name="desc" id="desc" placeholder="Descripción">
+                </div>
+                <div class="mb-3">
+                    <label for="ubi" class="form-label">Ubicación:</label>
+                    <input class="form-control" type="text" value="<%= negocio.ubi %>" name="ubi" id="ubi" placeholder="Ubicación">
+                </div>
+              
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto Actual:</label>
+                    <div>
+                        <img src="/Negocios/images/<%= negocio.foto %>" alt="" width="100px">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Cambiar Foto:</label>
+                    <input class="form-control" type="file" name="foto" id="foto">
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="submit">Editar Negocio</button>
+                <a href="/borrarnegocio/<%= user.id %>/<%= negocio.id %>" class="btn btn-danger">Eliminar</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container mt-5 pt-4">
+    <h1>Usuarios que han calificado tu negocio</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% usuariosCalificados.forEach((usuario, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= usuario.usuario %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("../templates/pie") %>

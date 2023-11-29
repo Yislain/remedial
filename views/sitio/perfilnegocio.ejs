@@ -1,0 +1,30 @@
+<%- include ("../templates/encabezado") %>
+<%- include ("../templates/menu") %>
+  <div class="container pt-4">
+    <h3 class="text-center mb-4">Tus noticias</h3>
+    <div class="boxcard">
+      <div class="row">
+        <% negocios.forEach((negocio) => { %>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+              <div class="row g-0">
+                <div class="col-md-6">
+                  <img src="/Negocios/images/<%= negocio.foto %>" class="card-img" alt="..." style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <p hidden><%=negocio.id%></p>
+                    <h5 class="card-title"><%= negocio.nombre %></h5>
+                    <p class="card-text">
+                    </p>
+                    <a href="/modificarnegocio/<%= user.id %>/<%= negocio.id%>" class="btn btn-outline-info">Modificar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+<%- include ("../templates/pie") %>

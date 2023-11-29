@@ -1,0 +1,64 @@
+<%- include("../templates/encabezado")%>
+
+<style>
+    body {
+        background-image: url('https://media.giphy.com/media/4H3Ii5eLChYul9p7NL/giphy-downsized-large.gif');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="container mt-5">
+    <form action="/nuevousuario" method="post" enctype="multipart/form-data">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h1 class="text-center">REGISTRO</h1>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Ejemplo: Juan Pérez" autofocus required>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa tu nombre.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Ejemplo: juan123" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa un nombre de usuario.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo</label>
+                    <input class="form-control" type="text" name="correo" id="correo" placeholder="Ejemplo: ejemplo@correo.com" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa tu correo electrónico.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Ejemplo: Contraseña123" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa una contraseña.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto de perfil</label>
+                    <input class="form-control" type="file" name="foto" id="foto" required>
+                    <div class="invalid-feedback">
+                        Por favor, selecciona una foto para el perfil.
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary" type="submit">Guardar Usuario</button>
+                <button class="btn btn-secondary" type="reset">Limpiar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<%- include("../templates/pie")%>
